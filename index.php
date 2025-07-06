@@ -164,7 +164,70 @@
   </div>
 </section>
 
+<section class="testimonials">
+  <div class="container">
+    <h2 class="section-title">💬 What Our Customers Say</h2>
+    <div class="testimonial-grid">
 
+      <div class="testimonial-card">
+        <img src="images/user3.jpg" alt="User 1">
+        <h4>Arshi Gojiya</h4>
+        <p class="stars">★★★★★</p>
+        <p class="quote">“Best milk I've ever tasted! Pure, fresh and delivered on time every morning.”</p>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="images/user2.jpg" alt="User 2">
+        <h4>Mahesh bhtaiya</h4>
+        <p class="stars">★★★★☆</p>
+        <p class="quote">“Desi ghee reminded me of my grandma’s cooking. Superb quality and flavor.”</p>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="images/user1.jpg" alt="User 3">
+        <h4>Kana varotaria</h4>
+        <p class="stars">★★★★★</p>
+        <p class="quote">“Amazing paneer, so soft and fresh! I love how natural everything feels.”</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-about">
+      <h4>🧈 Daily Dairy</h4>
+      <p>Pure, farm-fresh dairy products delivered with love and tradition — straight from our cows to your kitchen.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Testimonials</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Get in Touch</h4>
+      <p><i class="ph ph-map-pin"></i> Rajkot, Gujarat, India</p>
+      <p><i class="ph ph-phone-call"></i> +91 98765 43210</p>
+      <p><i class="ph ph-envelope"></i> hello@dailydairy.in</p>
+      <div class="footer-socials">
+        <a href="#"><i class="ph ph-facebook-logo"></i></a>
+        <a href="#"><i class="ph ph-instagram-logo"></i></a>
+        <a href="#"><i class="ph ph-whatsapp-logo"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Daily Dairy. All rights reserved.</p>
+  </div>
+</footer>
 
   <script src="script.js"></script>
 </body>
