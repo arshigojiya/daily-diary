@@ -347,3 +347,95 @@ body {
     gap: 0.8rem;
   }
 }
+
+/* ===== Why Choose Us ===== */
+.why-us {
+  background: #fff9e6;
+  padding: 4rem 1.5rem;
+  box-shadow: 0 6px 18px rgba(255, 215, 64, 0.1);
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.feature-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+.feature-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+.feature-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  color: #d48806;
+}
+.feature-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.feature-card i {
+  font-size: 3rem; /* Change this size as needed (e.g., 2rem, 48px, etc.) */
+  color: #d48806;  /* Your yellow theme */
+  margin-bottom: 1rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover i {
+  transform: scale(1.1);
+}
+
+.gallery {
+  background-color: #fffef7;
+  padding: 4rem 1.5rem;
+  box-shadow: inset 0 1px 6px rgba(0,0,0,0.05);
+}
+.gallery .container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+.gallery h2 {
+  font-size: 2rem;
+  color: #d48806;
+  margin-bottom: 0.5rem;
+}
+.gallery-subtext {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}

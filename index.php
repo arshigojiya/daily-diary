@@ -5,6 +5,7 @@
   <title>Daily Diary | Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
 
@@ -109,6 +110,60 @@
     </div>
   </div>
 </section>
+
+<section class="why-us">
+  <div class="container">
+    <h2 class="section-title">🌿 Why Choose Us</h2>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <i class="ph ph-leaf"></i>
+        <h4>100% Organic Feed</h4>
+        <p>Our cows are fed natural, chemical-free fodder grown on local farms.</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="ph ph-cow"></i>
+        <h4>Ethical Cow Care</h4>
+        <p>We prioritize the well-being of our cows with open shelters & vet care.</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="ph ph-flask"></i>
+        <h4>Lab-Tested Quality</h4>
+        <p>Every batch of milk and ghee is lab-tested to ensure safety & purity.</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="ph ph-truck"></i>
+        <h4>Fresh Daily Delivery</h4>
+        <p>We deliver fresh dairy every morning directly from the farm to your home.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="gallery">
+  <div class="container">
+    <h2 class="section-title">📷 Our Farm & Dairy Moments</h2>
+    <p class="gallery-subtext">Take a look at where your milk comes from — clean farms, happy cows, and fresh dairy processing.</p>
+
+    <div class="gallery-grid">
+      <img src="images/farm1.jpg" alt="Cow shed">
+      <img src="images/farm2.jpg" alt="Milking process">
+      <img src="images/farm3.jpg" alt="Fresh milk collection">
+      <img src="images/farm4.jpg" alt="Ghee preparation">
+      <img src="images/farm5.jpg" alt="Dairy lab testing">
+      <img src="images/farm6.jpg" alt="Farm delivery van">
+      <img src="images/farm7.jpg" alt="Cows grazing in field">
+<img src="images/farm8.jpg" alt="Traditional paneer cutting">
+
+    </div>
+  </div>
+</section>
+
 
 
   <script src="script.js"></script>
