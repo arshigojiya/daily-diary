@@ -10,13 +10,27 @@
 
   <?php include 'header.php'; ?>
 
-  <main class="container">
-    <section class="welcome">
-      <h1>Welcome, Mahesh 👋</h1>
-      <p>This is your personal, peaceful writing space. Start your next entry when you're ready.</p>
-      <a href="#" class="btn-yellow">Write Today’s Entry</a>
-    </section>
-  </main>
+  <section class="hero-slider">
+    <div class="slider">
+      <div class="slides">
+        <img src="images/slide1.jpeg" class="slide active" alt="Slide 1">
+        <img src="images/slide2.jpg" class="slide" alt="Slide 2">
+        <img src="images/slide3.jpg" class="slide" alt="Slide 3">
+        <img src="images/slide4.jpg" class="slide" alt="Slide 4">
+      </div>
 
+      <button class="nav prev">&#10094;</button>
+      <button class="nav next">&#10095;</button>
+
+      <div class="dots">
+        <span class="dot active" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+        <span class="dot" onclick="goToSlide(3)"></span>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
