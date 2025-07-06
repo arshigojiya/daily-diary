@@ -1,0 +1,132 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fffef7;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover {
+  color: #000;
+}
+
+/* New Entry Button */
+.btn-yellow {
+  background-color: #ffd54f;
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  color: #222 !important;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+.btn-yellow:hover {
+  background-color: #ffca28;
+  transform: scale(1.05);
+  border-color: #f0c000;
+}
+
+/* Mobile Responsive */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #444;
+}
+#menu-toggle {
+  display: none;
+}
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 1rem;
+    display: none;
+  }
+  #menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+    background: #fff8e1;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+}
+
+/* Main */
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+.welcome {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(255, 215, 64, 0.2);
+  text-align: center;
+}
+.welcome h1 {
+  color: #d48806;
+  margin-bottom: 1rem;
+}
+.btn-yellow {
+  background-color: #ffd54f;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #222;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+.btn-yellow:hover {
+  background-color: #ffca28;
+  transform: scale(1.05);
+}
