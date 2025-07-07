@@ -35,7 +35,7 @@
   <section class="info-section">
   <div class="container">
     <h2> About Cows & Milk Products</h2>
-    <p>
+    <p
       Cows have been an integral part of Indian culture, tradition, and rural livelihood. They provide not only milk but also ghee, curd, butter, and other nourishing products that sustain millions.
     </p>
     <p>
@@ -164,7 +164,7 @@
   </div>
 </section>
 
-<section class="testimonials">
+9section class="testimonials">
   <div class="container">
     <h2 class="section-title">💬 What Our Customers Say</h2>
     <div class="testimonial-grid">
@@ -214,8 +214,8 @@
     <div class="footer-contact">
       <h4>Get in Touch</h4>
       <p><i class="ph ph-map-pin"></i> Rajkot, Gujarat, India</p>
-      <p><i class="ph ph-phone-call"></i> +91 98765 43210</p>
-      <p><i class="ph ph-envelope"></i> hello@dailydairy.in</p>
+      <p><i class="ph ph-phone-call"></i> +918200376537</p>
+      <p><i class="ph ph-envelope"></i>arshigojiya526@gmail.com</p>
       <div class="footer-socials">
         <a href="#"><i class="ph ph-facebook-logo"></i></a>
         <a href="#"><i class="ph ph-instagram-logo"></i></a>
