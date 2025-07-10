@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+// ✅ Redirect if not logged in
 if (!isset($_SESSION['user_email'])) {
     header("Location: login.php");
     exit();
@@ -10,36 +12,39 @@ include '../db_connect.php';
 $success = "";
 $error = "";
 
-// Handle form submit
+// ✅ Handle product form
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $conn->real_escape_string($_POST['name']);
     $price = $_POST['price'];
 
-    // Image upload
+    // ✅ Image upload
     $image = $_FILES['image']['name'];
     $temp = $_FILES['image']['tmp_name'];
     $upload_folder = "../uploads/";
 
     if (!is_dir($upload_folder)) {
-        mkdir($upload_folder);
+        mkdir($upload_folder, 0777, true);
     }
 
     $image_path = $upload_folder . $image;
+    $image_db_path = "uploads/" . $image;
 
     if (move_uploaded_file($temp, $image_path)) {
-        $image_db_path = "uploads/" . $image;
-        $conn->query("INSERT INTO products (name, price, image) VALUES ('$name', '$price', '$image_db_path')");
-        $success = "✅ Product added successfully!";
+        $sql = "INSERT INTO products (name, price, image) VALUES ('$name', '$price', '$image_db_path')";
+        if ($conn->query($sql)) {
+            $success = "✅ Product added successfully!";
+        } else {
+            $error = "❌ Database error: " . $conn->error;
+        }
     } else {
-        $error = "❌ Failed to upload image.";
+        $error = "❌ Image upload failed.";
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add Product</title>
+    <title>Add Product - Admin</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -67,13 +72,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border: none;
             cursor: pointer;
         }
-        .msg {
-            font-weight: bold;
-            color: green;
-        }
-        .error {
-            color: red;
-        }
+        .msg { color: green; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
     </style>
 </head>
 <body>
