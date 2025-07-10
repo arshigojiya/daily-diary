@@ -1,9 +1,8 @@
 <?php
-$_SESSION['user_email'] = $user['email'];
-$_SESSION['user_name'] = $user['name'];
-header("Location: index.php");
-exit();
-
+(isset($_SESSION['user_email'])) {
+    header("Location: index.php");
+    exit();
+}
 
 $error = "";
 $success = "";

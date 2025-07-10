@@ -1,10 +1,10 @@
 <?php
-session_start();
-
-// ✅ Redirect to login if session not set
-if (!isset($_SESSION['user_email'])) {
-    header("Location: login.php");
+<?php session_start(); ?>
+if (isset($_SESSION['user_email'])) {
+    header("Location: index.php");
     exit();
+}
+
 }
 
 include '../db_connect.php'; // DB connection
