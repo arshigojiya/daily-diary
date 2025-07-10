@@ -1,6 +1,9 @@
 <?php
-session_start();
-include '../db_connect.php'; // ✅ Corrected path
+$_SESSION['user_email'] = $user['email'];
+$_SESSION['user_name'] = $user['name'];
+header("Location: index.php");
+exit();
+
 
 $error = "";
 $success = "";
