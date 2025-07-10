@@ -1,23 +1,23 @@
 <?php
 session_start();
 
-// ✅ Redirect if not logged in
+// ✅ Redirect to login if session not set
 if (!isset($_SESSION['user_email'])) {
     header("Location: login.php");
     exit();
 }
 
-include '../db_connect.php';
+include '../db_connect.php'; // DB connection
 
 $success = "";
 $error = "";
 
-// ✅ Handle product form
+// ✅ Handle form submit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $conn->real_escape_string($_POST['name']);
     $price = $_POST['price'];
 
-    // ✅ Image upload
+    // ✅ Handle image upload
     $image = $_FILES['image']['name'];
     $temp = $_FILES['image']['tmp_name'];
     $upload_folder = "../uploads/";
@@ -41,6 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,8 +73,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border: none;
             cursor: pointer;
         }
-        .msg { color: green; font-weight: bold; }
-        .error { color: red; font-weight: bold; }
+        .msg {
+            font-weight: bold;
+            color: green;
+        }
+        .error {
+            font-weight: bold;
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -81,8 +88,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="box">
     <h2>Add New Product</h2>
 
-    <?php if ($success) echo "<p class='msg'>$success</p>"; ?>
-    <?php if ($error) echo "<p class='error'>$error</p>"; ?>
+    <?php if ($success): ?>
+        <p class="msg"><?= $success ?></p>
+    <?php endif; ?>
+    
+    <?php if ($error): ?>
+        <p class="error"><?= $error ?></p>
+    <?php endif; ?>
 
     <form method="POST" enctype="multipart/form-data">
         <input type="text" name="name" placeholder="Product Name" required>
