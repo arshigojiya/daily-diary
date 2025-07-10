@@ -1,23 +1,23 @@
 <?php
-<?php session_start(); ?>
-if (isset($_SESSION['user_email'])) {
-    header("Location: index.php");
+session_start();
+
+// ✅ Redirect to login if not logged in
+if (!isset($_SESSION['user_email'])) {
+    header("Location: login.php");
     exit();
 }
 
-}
-
-include '../db_connect.php'; // DB connection
+include '../db_connect.php';
 
 $success = "";
 $error = "";
 
-// ✅ Handle form submit
+// ✅ Form Submit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $conn->real_escape_string($_POST['name']);
     $price = $_POST['price'];
 
-    // ✅ Handle image upload
+    // ✅ Upload
     $image = $_FILES['image']['name'];
     $temp = $_FILES['image']['tmp_name'];
     $upload_folder = "../uploads/";
@@ -32,12 +32,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (move_uploaded_file($temp, $image_path)) {
         $sql = "INSERT INTO products (name, price, image) VALUES ('$name', '$price', '$image_db_path')";
         if ($conn->query($sql)) {
-            $success = "✅ Product added successfully!";
+            $success = "✅ Product added!";
         } else {
-            $error = "❌ Database error: " . $conn->error;
+            $error = "❌ DB error: " . $conn->error;
         }
     } else {
-        $error = "❌ Image upload failed.";
+        $error = "❌ Failed to upload image.";
     }
 }
 ?>
@@ -73,14 +73,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border: none;
             cursor: pointer;
         }
-        .msg {
-            font-weight: bold;
-            color: green;
-        }
-        .error {
-            font-weight: bold;
-            color: red;
-        }
+        .msg { font-weight: bold; color: green; }
+        .error { font-weight: bold; color: red; }
     </style>
 </head>
 <body>

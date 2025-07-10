@@ -1,13 +1,10 @@
-<?php
-(isset($_SESSION['user_email'])) {
-    header("Location: index.php");
-    exit();
-}
+<<?php
+session_start();
+include '../db_connect.php';
 
 $error = "";
-$success = "";
 
-// Handle form submission
+// ✅ Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $conn->real_escape_string($_POST['email']);
     $password = $_POST['password'];
@@ -18,78 +15,69 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $result->fetch_assoc();
 
         if (password_verify($password, $user['password'])) {
-    // ✅ Login success
-    $_SESSION['user_id'] = $user['id'];
-    $_SESSION['user_name'] = $user['name'];
-    $_SESSION['user_email'] = $user['email'];
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_name'] = $user['name'];
+            $_SESSION['user_email'] = $user['email'];
 
-    header("Location: index.php"); // ✅ Corrected
-    exit(); // ✅ Stops further code
-}
-
+            header("Location: index.php");
+            exit();
+        } else {
+            $error = "❌ Incorrect password.";
+        }
     } else {
         $error = "❌ User not found.";
     }
 }
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>DairyMart - Admin Login</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Admin Login - DairyMart</title>
     <style>
-        * { box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body {
             background: #f2f2f2;
+            font-family: 'Poppins', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
         .login-box {
-            background: #ffffff;
+            background: white;
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            width: 100%;
             max-width: 400px;
+            width: 100%;
         }
         .login-box h2 {
-            margin-bottom: 25px;
-            color: #2e7d32;
             text-align: center;
+            color: #2e7d32;
+            margin-bottom: 25px;
         }
-        .login-box input[type="text"],
-        .login-box input[type="password"] {
+        input[type="text"], input[type="password"] {
             width: 100%;
             padding: 12px;
-            margin-bottom: 20px;
+            margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 6px;
-            font-size: 14px;
         }
-        .login-box button {
+        button {
             width: 100%;
+            padding: 12px;
             background: #2e7d32;
             color: white;
             border: none;
-            padding: 12px;
             border-radius: 6px;
-            font-size: 16px;
             cursor: pointer;
-            transition: background 0.3s ease;
         }
-        .login-box button:hover {
-            background: #256029;
-        }
-        .message {
-            text-align: center;
-            margin-bottom: 15px;
+        .error {
+            color: red;
             font-weight: bold;
+            text-align: center;
         }
-        .error { color: red; }
-        .success { color: green; }
     </style>
 </head>
 <body>
@@ -98,9 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h2>Admin Login</h2>
 
     <?php if ($error): ?>
-        <div class="message error"><?= $error ?></div>
-    <?php elseif ($success): ?>
-        <div class="message success"><?= $success ?></div>
+        <p class="error"><?= $error ?></p>
     <?php endif; ?>
 
     <form method="POST">
