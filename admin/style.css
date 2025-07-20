@@ -92,6 +92,15 @@ h2 {
     background: #34495e;
 }
 
+.sidebar ul li a.active {
+    background: #3498db;
+    color: white;
+}
+
+.sidebar ul li a.active:hover {
+    background: #2980b9;
+}
+
 .main-content {
     flex-grow: 1;
     padding: 20px;
